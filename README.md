@@ -1,6 +1,10 @@
 # 参考
 https://zenn.dev/stray/books/e3dbdf3f7aeac6/viewer/chapter2
 
+# コード整形
+`npm run format`
+`npm run lint:fix`
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
