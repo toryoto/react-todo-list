@@ -6,6 +6,7 @@ function App() {
   const [todoList, setTodoList] = useState(dummyTodoList);
 
   const changeCompleted = (id: number) => {
+    // prevTodoListには更新される前のtodoListが仮引数として保持される
     setTodoList((prevTodoList) => {
       return prevTodoList.map((todo) => {
         if (todo.id === id) {
