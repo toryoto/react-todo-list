@@ -40,6 +40,9 @@ export const TodoList = ({ todoList, changeCompleted, deleteTodo }: Props) => {
           </button>
         </div>
       ))}
+      {todoList.length === 0 && (
+        <p className="text-center text-sm">Todoがありません</p>
+      )}
     </div>
   );
 };
