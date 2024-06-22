@@ -1,12 +1,14 @@
+import { Trash2 } from "lucide-react";
 import { Todo } from "../types/todo";
 
 // 親から受け取るデータの型はProps
 type Props = {
   todoList: Todo[];
   changeCompleted: (id: number) => void;
+  deleteTodo: (id: number) => void;
 };
 
-export const TodoList = ({ todoList, changeCompleted }: Props) => {
+export const TodoList = ({ todoList, changeCompleted, deleteTodo }: Props) => {
   return (
     <div className="space-y-3">
       {todoList.map((todo) => (
@@ -29,7 +31,13 @@ export const TodoList = ({ todoList, changeCompleted }: Props) => {
               {todo.title}
             </span>
           </label>
-
+          <button
+            type="button"
+            className="rounded bg-gray-200 p-2 transition-colors hover:bg-gray-300"
+            onClick={() => deleteTodo(todo.id)}
+          >
+            <Trash2 className="size-5 text-gray-500" />
+          </button>
         </div>
       ))}
     </div>

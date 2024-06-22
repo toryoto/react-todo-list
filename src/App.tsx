@@ -33,13 +33,22 @@ function App() {
     });
   };
 
+  // filterメソッドを使用して対象のidのTodoを除外
+  const deleteTodo = (id: number) => {
+    setTodoList((prevTodoList) => {
+      return prevTodoList.filter((todo) => {
+        return todo.id !== id;
+      })
+    })
+  }
+
   return (
     <main className="mx-auto mt-10 max-w-xl space-y-10">
       <h1 className="text-center text-4xl">Todoアプリ</h1>
       <div className="space-y-5">
         <AddTodoForm addTodo={addTodo} />
         <div className='rounded bg-slate-200 p-5'>
-          <TodoList todoList={todoList} changeCompleted={changeCompleted} />
+          <TodoList todoList={todoList} changeCompleted={changeCompleted} deleteTodo={deleteTodo} />
         </div>
       </div>
     </main>
